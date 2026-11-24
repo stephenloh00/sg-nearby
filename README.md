@@ -20,3 +20,15 @@ production use a paid/self-hosted Overpass or a Places API, and use a proper til
 ## Edit
 - `categories.js` – add or change buttons (Overpass tag filters) and preset start points
 - `app.js` – logic · `style.css` – look
+
+## Google Places key (ratings, prices, photos, reviews)
+1. console.cloud.google.com → create a project → enable billing (Google gives a monthly free credit).
+2. APIs & Services → Library → enable **Places API (New)**.
+3. APIs & Services → Credentials → Create credentials → API key.
+4. Edit the key and **restrict it**:
+   - Application restrictions: Websites → add `https://stephenloh00.github.io/*`
+   - API restrictions: Places API (New) only
+5. Also set a budget alert and a daily quota cap (Quotas page) so a traffic spike cannot overspend.
+6. Paste the key into `config.js`, commit, push. Without a key the app falls back to free OpenStreetMap data.
+
+Google Nearby Search returns at most 20 places per request.

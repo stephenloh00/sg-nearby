@@ -28,15 +28,26 @@
 
 <main>
   <div id="map" aria-label="Map"></div>
-  <ol id="results" class="results"></ol>
+  <section id="panel" class="panel" aria-label="Nearby places">
+    <div id="filters" class="filters"></div>
+    <ol id="results" class="results"></ol>
+  </section>
 </main>
 
 <footer>
   Emergency: Police <b>999</b> · Ambulance/Fire <b>995</b> · Tourist hotline <b>1800 736 2000</b><br>
-  Data © OpenStreetMap contributors. Walking time is an estimate (~80 m/min).
+  <span id="credit">Map data © OpenStreetMap contributors.</span> Walking time is an estimate (~80 m/min).
 </footer>
 
+<div id="modal" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button id="m-close" class="close" aria-label="Close details">✕</button>
+    <div id="m-body"></div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="config.js"></script>
 <script src="categories.js"></script>
 <script src="app.js"></script>
 </body>
