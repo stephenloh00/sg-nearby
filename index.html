@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#d6224a">
+<title>SG Nearby – Singapore Tourist Guide</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">🦁 <b>SG Nearby</b><span>Find what's around you in Singapore</span></div>
+  <button id="locate" class="ghost" title="Use my current location">📍 My location</button>
+</header>
+
+<div id="status" class="status" role="status" aria-live="polite">Finding your location…</div>
+
+<section class="controls">
+  <div class="radius" role="group" aria-label="Search radius">
+    <span>Within</span>
+    <button data-r="100">100 m</button>
+    <button data-r="250">250 m</button>
+    <button data-r="500" class="on">500 m</button>
+  </div>
+  <div id="cats" class="cats" role="group" aria-label="What are you looking for?"></div>
+</section>
+
+<main>
+  <div id="map" aria-label="Map"></div>
+  <ol id="results" class="results"></ol>
+</main>
+
+<footer>
+  Emergency: Police <b>999</b> · Ambulance/Fire <b>995</b> · Tourist hotline <b>1800 736 2000</b><br>
+  Data © OpenStreetMap contributors. Walking time is an estimate (~80 m/min).
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="categories.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
